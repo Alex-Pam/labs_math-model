@@ -20,7 +20,6 @@ def foo():
     y = function_value_of_reference_point
     while (pow(h, 4) >= accuracy):
         n += 1
-        h = (end_point - starting_point) / n
         for i in range(n):
             k1 = h * func(x, y)
             k2 = h * func(x + h / 2, y + k1 / 2)
