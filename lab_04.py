@@ -14,21 +14,22 @@ def foo():
     accuracy = float(input("e: "))
     num_of_round = get_count_after_dot(accuracy)
 
-    n = 1
+    n = 0
     h = (end_point - starting_point) / n
     x = starting_point
     y = function_value_of_reference_point
     while (pow(h, 4) >= accuracy):
         n += 1
-        for i in range(n):
-            k1 = h * func(x, y)
-            k2 = h * func(x + h / 2, y + k1 / 2)
-            k3 = h * func(x + h, y + k2 / 2)
-            k4 = h * func(x + h, y + k3)
-            dy = (k1 + 2 * k2 + 2 * k3 + k4) / 6
-            y += dy
-            x += h
-        print("Numbers of iteration: " + str(n) + "\n")
+        h = (end_point - starting_point) / n
+    for i in range(n):
+        k1 = h * func(x, y)
+        k2 = h * func(x + h / 2, y + k1 / 2)
+        k3 = h * func(x + h, y + k2 / 2)
+        k4 = h * func(x + h, y + k3)
+        dy = (k1 + 2 * k2 + 2 * k3 + k4) / 6
+        y += dy
+        x += h
+    print("Numbers of iteration: " + str(n) + "\n")
     return round(y, num_of_round)
 
 
